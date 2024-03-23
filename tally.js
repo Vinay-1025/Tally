@@ -111,5 +111,8 @@ const body = document.querySelector('body');
         }
     }());
 
-
+    function toggleMenu() {
+        var menu = document.querySelector('header ul');
+        menu.classList.toggle('active');
+    }
     

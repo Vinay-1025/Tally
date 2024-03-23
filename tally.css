@@ -200,7 +200,7 @@
             background: var(--main-bg);
             z-index: 100;
         }
-
+        
         header ul {
             display: flex;
             justify-content: center;
@@ -208,42 +208,43 @@
             list-style: none;
             padding: 0;
         }
-
+        
         header ul li {
             margin: 0 1rem;
         }
-
-        header .logo, .power-switch{
+        
+        header .logo,
+        .power-switch {
             margin: var(--margin-l-r);
         }
-
+        
         header .logo * {
             color: var(--main-txt);
         }
-
+        
         header .logo .pri {
             color: var(--heart-color);
         }
-
+        
         header .logo .sec {
             color: var(--main-link-hover);
         }
-
+        
         .power-switch {
             width: calc(var(--header-height) - 20px);
             height: calc(var(--header-height) / 3);
         }
-
+        
         .switch {
             width: 100%;
             height: 100%;
             position: relative;
         }
-
+        
         .switch input {
             display: none;
         }
-
+        
         .switch label {
             display: block;
             width: 100%;
@@ -251,12 +252,10 @@
             position: relative;
             background: var(--main-txt);
             border-radius: 30px 30px 30px 30px;
-            -webkit-transition: all .5s ease;
             transition: all .5s ease;
         }
-
+        
         .switch input~label i {
-            -webkit-transition: all .5s ease;
             background: var(--main-bg);
             border: none;
             border-radius: inherit;
@@ -283,6 +282,38 @@
             transition: all .5s ease;
             width: calc(var(--header-height) / 4);
             z-index: 2;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+        
+        /* Add media query for smaller viewports */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Show the menu toggle icon on smaller viewports */
+                cursor: pointer;
+            }
+        
+            .menu-toggle i {
+                font-size: 24px;
+                color: var(--main-txt); /* Adjust color if needed */
+            }
+        
+            header ul {
+                display: none; /* Hide the list items by default on smaller viewports */
+                position: absolute;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: var(--main-bg);
+                z-index: 99;
+                flex-direction: column;
+            }
+        
+            header ul.active {
+                display: flex; /* Display the list items when the menu is active */
+            }
         }
 
         #about {
